@@ -14,6 +14,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Adding Hugging Face Key
+
+I have attempted to use hugging face as and openAi model for prompt respomse. 
+Kindly add the key to path 'src/app/backend/server.js'
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
