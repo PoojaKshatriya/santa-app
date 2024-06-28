@@ -1,0 +1,60 @@
+<div class="container mx-auto p-6 max-w-md bg-white rounded-lg shadow-lg">
+    <div class="text-center mb-6">
+      <h1 class="text-2xl font-bold text-gray-800 mb-4">Santa Gift Request</h1>
+      <input
+        [(ngModel)]="childName"
+        placeholder="Enter child's name"
+        class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-blue-500"
+      />
+      <button
+        (click)="checkChild()"
+        class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition-colors"
+      >
+        Check Child
+      </button>
+    </div>
+    <div *ngIf="isRegistered !== null" class="text-center mb-6">
+      <p
+        *ngIf="isRegistered"
+        class="text-green-600 font-semibold"
+      >
+        The child is registered.
+      </p>
+      <p
+        *ngIf="!isRegistered"
+        class="text-red-600 font-semibold"
+      >
+        The child is not registered.
+      </p>
+    </div>
+    <div *ngIf="isUnderAge !== null" class="text-center mb-6">
+      <p
+        *ngIf="isUnderAge"
+        class="text-green-600 font-semibold"
+      >
+        The child is under 10 years old.
+      </p>
+      <p
+        *ngIf="!isUnderAge"
+        class="text-red-600 font-semibold"
+      >
+        The child is 10 years old or older.
+      </p>
+    </div>
+    <div *ngIf="isRegistered" class="text-center">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Ask Santa for a Gift</h2>
+      <input
+        [(ngModel)]="userInput"
+        placeholder="Enter your gift request"
+        class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-blue-500"
+      />
+      <button
+        (click)="sendRequest()"
+        class="w-full bg-green-500 text-white p-3 rounded-lg hover:bg-green-600 transition-colors"
+      >
+        Send to Santa
+      </button>
+      <p *ngIf="response" class="text-gray-700 mt-4">{{ response }}</p>
+    </div>
+  </div>
+  
